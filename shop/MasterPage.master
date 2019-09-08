@@ -1,0 +1,140 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        body{
+          background:url(images/bcg.jpg);
+
+        }
+        #top{
+           
+            height:40px;
+           
+        }
+        #Nav{
+            float:right;
+            padding-top:10px;
+        }
+       
+        #title{
+            font-size:25px;
+           clear:both;
+           height:50px;
+           
+           text-align:center;
+           padding-top:20px;
+        }
+         .L1{
+            position:absolute;
+            left:1px;
+            top:1px;
+            font-size:15px;
+        }
+         .Link1{
+            position:absolute;
+            left:1px;
+            top:17px;
+            font-size:15px;  
+             color:red;
+         }
+         .Link2{
+        position:absolute;
+            right:1px;
+            top:1px;
+            font-size:15px;  
+            color:black;
+         }
+        #content{
+            height:400px;
+        }
+        #footer{
+          background:#bbbbbb;
+            text-align:center;
+           padding-bottom:5px;
+            height:20px;
+            width:100%;
+            position:fixed;
+          bottom:0px;
+        }
+        #find{
+            margin-left:auto;
+            text-align:center;
+            font-size:15px;
+        }
+       
+    </style>
+</head>
+<body>
+
+    <form id="form1" runat="server">
+    <div id="content">
+        <div id="title" style="position:relative">
+  
+               <asp:Label ID="Label1" runat="server" class="L1"></asp:Label>
+     <asp:HyperLink ID="HyperLink1" runat="server" CssClass="Link1" NavigateUrl="~/login.aspx"></asp:HyperLink>
+            
+            <asp:Button ID="Button2" runat="server" Text="注销" CssClass="Link2" OnClick="Button2_Click"/>
+            网上购物系统
+        </div>
+       
+        <div id="top">
+           
+       <div id="Nav">
+               <asp:Menu ID="Menu2" runat="server" Orientation="Horizontal" RenderingMode="Table">
+                <Items>
+                    <asp:MenuItem NavigateUrl="homePage.aspx" Text="首页" Value="首页"></asp:MenuItem>
+                    <asp:MenuItem Text="商品类型" Value="商品类型">
+                        <asp:MenuItem Text="衣服" Value="衣服" NavigateUrl="~/GoodsType.aspx?type='衣服'"></asp:MenuItem>
+                        <asp:MenuItem Text="玩具" Value="玩具"  NavigateUrl="~/GoodsType2.aspx?type='玩具'"></asp:MenuItem>
+                        <asp:MenuItem Text="食品" Value="食品"  NavigateUrl="~/GoodsType3.aspx?type='食品'"></asp:MenuItem>
+                        <asp:MenuItem Text="家具" Value="家具"  NavigateUrl="~/GoodsType4.aspx?type='家具'"></asp:MenuItem>
+                        <asp:MenuItem Text="水果" Value="水果"  NavigateUrl="~/GoodsType5.aspx?type='水果'"></asp:MenuItem>
+                        <asp:MenuItem></asp:MenuItem>
+                    </asp:MenuItem>
+                    <asp:MenuItem NavigateUrl="Cart.aspx" Text="购物车" Value="购物车"></asp:MenuItem>
+                    <asp:MenuItem Text="商品排行" Value="商品排行">
+                        <asp:MenuItem NavigateUrl="6.aspx" Text="销售量" Value="销售量"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="7.aspx" Text="评分" Value="评分"></asp:MenuItem>
+                    </asp:MenuItem>
+                    <asp:MenuItem NavigateUrl="4.aspx" Text="我的商品" Value="我的商品"></asp:MenuItem>
+                    <asp:MenuItem NavigateUrl="Orders.aspx" Text="订单" Value="订单"></asp:MenuItem>
+                    <asp:MenuItem Text="上架" Value="上架" NavigateUrl="shelf.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text="下架" Value="下架" NavigateUrl="disShelf.aspx"></asp:MenuItem>
+                </Items>
+            </asp:Menu>
+       </div>
+
+
+</div>
+     <div id="find">
+               <asp:TextBox ID="TextBox1" runat="server" Width="500px" Height="20px">
+
+               </asp:TextBox><asp:Button ID="Button1" runat="server" Text="搜索" OnClick="Button1_Click"  />
+     </div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        
+        
+         
+        
+        
+        
+        </asp:ContentPlaceHolder>
+
+    </div>
+  <div id="footer">
+
+      版权所有归ldq所有
+  </div>
+      
+
+    </form>
+</body>
+</html>
